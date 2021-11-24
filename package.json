@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/irvil-js/goit-nodejs-hw-01#readme",
   "dependencies": {
+    "commander": "^8.3.0",
     "nodemon": "^2.0.15",
     "yargs": "^17.2.1"
   }
