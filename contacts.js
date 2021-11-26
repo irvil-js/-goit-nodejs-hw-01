@@ -27,6 +27,9 @@ async function getContactById(contactId) {
       (contact) => contact.id === Number(contactId)
     );
 
+    if (!contact)
+      return console.error(`Пользователя с id ${contactId} не найден`.red);
+
     console.log(contact);
     return contact;
   } catch (error) {
@@ -41,6 +44,9 @@ async function removeContact(contactId) {
     const filteredContacts = contacts.filter(
       (contact) => contact.id !== Number(contactId)
     );
+      if (contacts.length === filteredContacts.length)
+      return console.log(`Пользователя с id ${contactId} не найден`.red);
+
 
     await writeFile(contactsPath, JSON.stringify(filteredContacts));
     console.table(filteredContacts);
